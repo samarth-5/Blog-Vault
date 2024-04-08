@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashboard.jsx';
 import Projects from './pages/Projects.jsx';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
+import PrivateRoute from './components/PrivateRoute.jsx';
 
 export default function App() {
   return (
@@ -18,7 +19,9 @@ export default function App() {
           <Route path='/about' element={<About />} />          
           <Route path='/sign-in' element={<SignIn />} />
           <Route path='/sign-up' element={<SignUp />} />
-          <Route path='/dashboard' element={<Dashboard />} />
+          <Route element={<PrivateRoute />}>
+            <Route path='/dashboard' element={<Dashboard />} />
+          </Route>
           <Route path='/projects' element={<Projects />} />   
         </Routes>
       <Footer />
