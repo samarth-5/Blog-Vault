@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser';
 
 import userRoutes from './routes/userRoute.js';
 import authRoutes from './routes/authRoute.js';
+import postRoutes from './routes/postRoute.js';
 
 dotenv.config();
 
@@ -23,8 +24,9 @@ app.listen(3000,()=>{
 });
 
 
-app.use('/api/user', userRoutes);
+app.use('/api/user',userRoutes);
 app.use('/api/auth',authRoutes);
+app.use('/api/post',postRoutes);
 
 //middlewares
 app.use((err,req,res,next)=>{
