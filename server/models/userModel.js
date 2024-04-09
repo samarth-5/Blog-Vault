@@ -18,7 +18,11 @@ const userSchema=new mongoose.Schema({
     profilePicture:{
         type: String,
         default: "https://i0.wp.com/www.howtomob.com/wp-content/uploads/2022/07/whatsapp-dp-for-boys-.jpg?ssl=1&resize=512%2C512",
-    }
+    },
+    isAdmin:{
+        type: Boolean,
+        default: false,
+    }, 
 }, {timestamps: true});
 
 const User=mongoose.model('User',userSchema);
