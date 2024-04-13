@@ -88,28 +88,29 @@ export default function CommentSection({ postId }) {
   };
 
   const handleEdit = async (comment, editedContent) => {
-    setComments(
-      comments.map((c) =>
-        c._id === comment._id ? { ...c, content: editedContent } : c
-      )
+    setComments(comments.map((c) =>
+        c._id === comment._id ? { ...c, content: editedContent } : c)
     );
   };
 
   const handleDelete = async (commentId) => {
     setShowModal(false);
     try {
-      if (!currentUser) {
+      if (!currentUser) 
+      {
         navigate('/sign-in');
         return;
       }
       const res = await fetch(`/api/comment/deleteComment/${commentId}`, {
         method: 'DELETE',
       });
-      if (res.ok) {
+      if (res.ok) 
+      {
         const data = await res.json();
         setComments(comments.filter((comment) => comment._id !== commentId));
       }
-    } catch (error) {
+    } 
+    catch (error) {
       console.log(error.message);
     }
   };
@@ -169,12 +170,7 @@ export default function CommentSection({ postId }) {
           ))}
         </>
       )}
-      <Modal
-        show={showModal}
-        onClose={() => setShowModal(false)}
-        popup
-        size='md'
-      >
+      <Modal show={showModal} onClose={() => setShowModal(false)} popup size='md'>
         <Modal.Header />
         <Modal.Body>
           <div className='text-center'>
@@ -183,10 +179,7 @@ export default function CommentSection({ postId }) {
               Are you sure you want to delete this comment?
             </h3>
             <div className='flex justify-center gap-4'>
-              <Button
-                color='failure'
-                onClick={() => handleDelete(commentToDelete)}
-              >
+              <Button color='failure' onClick={() => handleDelete(commentToDelete)} >
                 Yes, I'm sure
               </Button>
               <Button color='gray' onClick={() => setShowModal(false)}>
