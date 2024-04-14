@@ -89,15 +89,15 @@ export default function CreatePost() {
                 <TextInput type='text' placeholder='Title' required id='title' className='flex-1' onChange={(e)=>setFormData({...formData, title: e.target.value})} />
                 <Select onChange={(e)=>setFormData({...formData, category: e.target.value})}>
                     <option value='uncategorized'>Select a category</option>
-                    <option value="webdev">Web Development</option>
-                    <option value="appdev">Android Development</option>
-                    <option value="iosdev">iOS Development</option>
-                    <option value="blockchain">Blockchain</option>
-                    <option value="cloud">Cloud Computing</option>
-                    <option value="cyber">Cyber Security</option>
-                    <option value="uiux">UI/UX Designing</option>
-                    <option value="aiml">Machine Learning</option>
-                    <option value="gamedev">Game Development</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="App Development">Android Development</option>
+                    <option value="iOS Development">iOS Development</option>
+                    <option value="Blockchain">Blockchain</option>
+                    <option value="Cloud Computing">Cloud Computing</option>
+                    <option value="Cyber Security">Cyber Security</option>
+                    <option value="UI/UX">UI/UX Designing</option>
+                    <option value="Machine Learning">Machine Learning</option>
+                    <option value="Game Development">Game Development</option>
                 </Select>
             </div>
             <div className="flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3">
